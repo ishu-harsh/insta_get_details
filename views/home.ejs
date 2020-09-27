@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insta Id Details</title>
+    <!-- <link rel="stylesheet" href="./css.css"> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+</head>
+<body>    
+        <div style="text-align: center; margin-top: 100px;">
+            <h2 style="color: indianred;">Enter the Insta Username</h2>
+            <input id="username" type="text" name="username">
+            <button type="submit" onclick="getUserName()" class="btn btn-danger btn-sm">Submit</button>     
+        </div>
+       
+     <script>
+         function getUserName(){
+
+            var username = document.getElementById("username").value
+            console.log(username)
+         axios.post('/', {
+           username : username
+        })
+        .then(function (response) {
+            window.location.replace('/insta')
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+         }
+     </script>
+</body>
+</html>
